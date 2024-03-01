@@ -89,24 +89,24 @@ class LiteralSpace(Space):
                 all_ground_literals.add(lit)
         return all_ground_literals
 
-    def contains(self, x):
-        """Return boolean if x is a valid member of this space."""
-        if not isinstance(x, State):
-            return False
+    # def contains(self, x):
+    #     """Return boolean if x is a valid member of this space."""
+    #     if not isinstance(x, State):
+    #         return False
 
-        # Check all predicates can be grounded from the objects in the state.
-        try:
-            # If the state contains object types not defined in the environment, a KeyError is raised.
-            self._update_objects_from_state(x)
-        except KeyError:
-            return False
+    #     # Check all predicates can be grounded from the objects in the state.
+    #     try:
+    #         # If the state contains object types not defined in the environment, a KeyError is raised.
+    #         self._update_objects_from_state(x)
+    #     except KeyError:
+    #         return False
 
-        # Check all state and goal literals are valid.
-        for lit in (x.literals | set(x.goal.literals)):
-            if lit not in self._all_ground_literals:
-                return False
+    #     # Check all state and goal literals are valid.
+    #     for lit in (x.literals | set(x.goal.literals)):
+    #         if lit not in self._all_ground_literals:
+    #             return False
 
-        return True
+    #     return True
 
 
 
