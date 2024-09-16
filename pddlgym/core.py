@@ -140,6 +140,7 @@ def _select_operator(state, action, domain, inference_mode="infer",
         num_assignments = len(assignments)
         if num_assignments > 0:
             if require_unique_assignment:
+                if num_assignments != 1: print(assignments)
                 assert num_assignments == 1, "Nondeterministic envs not supported"
             selected_operator = operator
             assignment = assignments[0]

@@ -15,17 +15,20 @@ def demo_random(env_name, render=True, problem_index=0, verbose=True):
 
 def run_all(render=True, verbose=True):
     ## Some probabilistic environments
-    demo_random("explodingblocks", render=render, verbose=verbose)
-    demo_random("tireworld", render=render, verbose=verbose)
-    demo_random("river", render=render, verbose=verbose)
+    # demo_random("explodingblocks", render=render, verbose=verbose)
+    # demo_random("tireworld", render=render, verbose=verbose)
+    # demo_random("river", render=render, verbose=verbose)
 
     ## Some deterministic environments
-    demo_random("sokoban", render=render, verbose=verbose)
-    demo_random("gripper", render=render, verbose=verbose)
-    demo_random("rearrangement", render=render, problem_index=6, verbose=verbose)
-    demo_random("minecraft", render=render, verbose=verbose)
-    demo_random("blocks", render=render, verbose=verbose)
-    demo_random("blocks_operator_actions", render=render, verbose=verbose)
+    # demo_random("sokoban", render=render, verbose=verbose)
+    # demo_random("gripper", render=render, verbose=verbose)
+    # demo_random("rearrangement", render=render, problem_index=6, verbose=verbose)
+    # demo_random("minecraft", render=render, verbose=verbose)
+    # demo_random("blocks", render=render, verbose=verbose)
+    # demo_random("blocks_operator_actions", render=render, verbose=verbose)
+    # pddlgym.register_pddl_env("bakingrealistic", True, {"operators_as_actions": False})
+    # pddlgym.register_pddl_env("bakingrealistic", False, {"operators_as_actions": False})
+    demo_random("bakingrealistic", render=False)
     # demo_random("quantifiedblocks", render=render, verbose=verbose)
     # demo_random("fridge", render=render, verbose=verbose)
 

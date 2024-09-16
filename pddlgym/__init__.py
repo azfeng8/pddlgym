@@ -34,7 +34,6 @@ def register_pddl_env(name, is_test_env, other_args):
         kwargs=dict({'domain_file' : domain_file, 'problem_dir' : problem_dir,
                      **other_args}),
     )
-
 for env_name, kwargs in [
         ("gripper", {'operators_as_actions' : True,
                      'dynamic_action_space' : True}),
@@ -52,6 +51,7 @@ for env_name, kwargs in [
         ("depot", {'operators_as_actions' : True,
                    'dynamic_action_space' : True}),
         ("baking", {}),
+        ("bakingrealistic", {"operators_as_actions": False}),
         ("blocks", {'render' : blocks_render}),
         ("derivedblocks", {'render' : blocks_render}),
         ("toomanyblocks", {'render' : blocks_render}),

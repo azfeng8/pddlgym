@@ -184,7 +184,7 @@ class PDDLParser:
         typed_args = []
         # Validate types against the given params dict.
         assert pred in self.predicates, "Predicate {} is not defined".format(pred)
-        assert self.predicates[pred].arity == len(args), pred
+        assert self.predicates[pred].arity == len(args), f'{pred}, {args}'
         for i, arg in enumerate(args):
             if arg not in params:
                 raise Exception("Argument {} not in params {}".format(arg, params))
@@ -655,7 +655,7 @@ class PDDLProblemParser(PDDLParser):
         self.problem_name = re.search(patt, self.problem).groups()[0].strip()
         patt = r"\(:domain(.*?)\)"
         domain_name = re.search(patt, self.problem).groups()[0].strip()
-        assert domain_name == self.domain_name, "Problem file doesn't match the domain file!"
+        assert domain_name == self.domain_name, f"Problem file {domain_name} doesn't match the domain file {self.domain_name}!"
         self._parse_problem_objects()
         self._parse_problem_initial_state()
         self._parse_problem_goal()
