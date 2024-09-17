@@ -378,7 +378,12 @@ class PDDLEnv(gym.Env):
             operators_as_actions=operators_as_actions)
         problems = []
         problem_files = [f for f in glob.glob(os.path.join(problem_dir, "*.pddl"))]
-        for problem_file in sorted(problem_files):
+        # Sort problem{#}.pddl by #
+        if all(os.path.basename(f).startswith('problem') for f in problem_files):
+            sorted_files = sorted(problem_files, key = lambda x: int(os.path.basename(x)[len('problem'): -len('.pddl')]))
+        else:
+            sorted_files = sorted(problem_files)
+        for problem_file in sorted_files:
             problem = PDDLProblemParser(problem_file, domain.domain_name, 
                 domain.types, domain.predicates, domain.actions, domain.constants)
             problems.append(problem)
