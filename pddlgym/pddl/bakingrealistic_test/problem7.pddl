@@ -13,11 +13,6 @@
 	egg-1 - egg_hypothetical
 	egg-2 - egg_hypothetical
 	egg-3 - egg_hypothetical
-  egg-3 - egg_hypothetical
-  egg-4 - egg_hypothetical
-  egg-5 - egg_hypothetical
-  egg-6 - egg_hypothetical
-  egg-7 - egg_hypothetical
 	flour-0 - powder_ingredient_hypothetical
 	flour-1 - powder_ingredient_hypothetical
 	measuring-cup-0 - measuring_cup
