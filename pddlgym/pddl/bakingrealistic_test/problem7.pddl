@@ -1,5 +1,5 @@
 
-(define (problem baking-realistic-test-8) (:domain bakingrealistic)
+(define (problem baking-realistic-test-5) (:domain bakingrealistic)
   (:objects
         baking-powder-0 - powder_ingredient_hypothetical
 	baking-powder-1 - powder_ingredient_hypothetical
@@ -4147,6 +4147,12 @@
 	(use-stand-mixer mixer-0 plate-1 mixture-8)
   )
   (:goal (and
-	(oven-is-full oven-0)
-	(oven-is-full oven-1)))
+  	(not (mixture-is-airy mixture-0))
+	(mixture-has-raw-egg-yolk mixture-0)
+	(mixture-has-raw-egg-whites mixture-0)
+	(mixture-has-butter mixture-0)
+	(mixture-has-sugar mixture-0)
+	(mixture-has-cups-of-flour mixture-0)
+    (mixture-has-baking-powder mixture-0)))
+
 )

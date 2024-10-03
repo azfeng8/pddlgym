@@ -26,7 +26,6 @@
 		(is-sugar ?arg0 - powder_ingredient_hypothetical)
 		(is-tablespoons-of-flour ?arg0 - powder_ingredient_hypothetical)
 		(is-whipped-egg-whites ?arg0 - egg_hypothetical)
-		(is-whole-egg ?arg0 - egg_hypothetical)
 		(is-whole-raw-egg ?arg0 - egg_hypothetical)
 		(mixture-has-baking-powder ?arg0 - mixture_hypothetical)
 		(mixture-has-butter ?arg0 - mixture_hypothetical)

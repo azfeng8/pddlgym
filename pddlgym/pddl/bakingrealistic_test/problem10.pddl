@@ -1,5 +1,5 @@
 
-(define (problem baking-realistic-test-10) (:domain bakingrealistic)
+(define (problem baking-realistic-test-4) (:domain bakingrealistic)
   (:objects
         baking-powder-0 - powder_ingredient_hypothetical
 	baking-powder-1 - powder_ingredient_hypothetical
@@ -4147,5 +4147,8 @@
 	(use-stand-mixer mixer-0 plate-1 mixture-8)
   )
   (:goal (and
-	(powder-ingredient-in-container bowl-0 flour-0)))
+	(is-raw-egg-whites egg-3)
+    (is-raw-egg-yolk egg-0)
+    (egg-in-container bowl-0 egg-0)
+    (egg-in-container bowl-1 egg-3)))
 )

@@ -1,5 +1,5 @@
 
-(define (problem baking-realistic-test-6) (:domain bakingrealistic)
+(define (problem baking-realistic-test-4) (:domain bakingrealistic)
   (:objects
         baking-powder-0 - powder_ingredient_hypothetical
 	baking-powder-1 - powder_ingredient_hypothetical
@@ -44,6 +44,8 @@
 	sugar-1 - powder_ingredient_hypothetical
   )
   (:init 
+	(container-in-oven pan-0 oven-0)
+	(container-in-an-oven pan-0)
 	(beat-egg-whites mixer-0 bowl-0 egg-0)
 	(beat-egg-whites mixer-0 bowl-0 egg-1)
 	(beat-egg-whites mixer-0 bowl-0 egg-2)
@@ -4146,8 +4148,7 @@
 	(use-stand-mixer mixer-0 plate-1 mixture-7)
 	(use-stand-mixer mixer-0 plate-1 mixture-8)
   )
-  (:goal (and
-	(not (mixture-is-airy mixture-0))
-	(mixture-has-raw-egg-yolk mixture-0)
-	(not (mixture-has-raw-egg-whites mixture-0))))
+  (:goal (and 
+	(not (container-in-an-oven pan-0)))
+  )
 )

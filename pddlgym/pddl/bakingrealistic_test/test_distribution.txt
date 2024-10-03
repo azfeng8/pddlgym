@@ -1,0 +1,152 @@
+The test distribution is selected based on two criteria:
+
+- To show generalization from the train goals.
+- To increase test accuracy each time an additional ground truth operator is correctly learned.
+- To order the problems from hard (problem1) to easy (problem-n).
+
+To adhere to such criteria, the test goals have been selected as:
+
+OLD:
+
+1. Test learned to bake souffle, cake, and move plate (all operators are correct enough).
+	(is-souffle dessert-0)
+	(not (pan-is-damaged pan-0))
+	(dessert-in-container plate-0 dessert-0)
+	(is-cake dessert-1)
+	(dessert-in-container plate-1 dessert-1)
+	(not (pan-is-damaged pan-1))
+
+2 -> 4. Test learned to bake cakes in a kitchen with 2 ovens and 2 pans (so, this doesn't require removepanfromoven).
+	(is-cake dessert-0)
+	(is-cake dessert-1)
+
+3 -> 3. Test learned to bake souffle.
+	(is-souffle dessert-0)
+	(dessert-in-container plate-1 dessert-0)
+
+4 -> 9. Test learned use-stand-mixer and fold-egg-whites-into-mixture operators.
+	(mixture-is-airy mixture-1)
+	(mixture-has-raw-egg-whites mixture-1)
+	(mixture-has-raw-egg-yolk mixture-1)
+	(mixture-has-butter mixture-1)
+	(mixture-has-sugar mixture-1)
+	(mixture-has-tablespoons-of-flour mixture-1)
+
+5 -> 7. Test learned use-stand-mixer on cake mixture.
+	(not (mixture-is-airy mixture-0))
+	(mixture-has-raw-egg-yolk mixture-0)
+	(mixture-has-butter mixture-0)
+	(mixture-has-sugar mixture-0)
+	(mixture-has-cups-of-flour mixture-0)
+
+6 -> 8. Test learned use-stand-mixer on souffle mixture.
+	(mixture-has-raw-egg-yolk mixture-0)
+	(not (mixture-has-raw-egg-whites mixture-0))
+
+7 -> 15. Test learned put-pan-in-oven.
+	(oven-is-full oven-0)
+	(oven-is-full oven-1)
+
+8 -> 16. Test learned crack egg operator.
+	(egg-in-container pan-0 egg-0)
+	(not (is-in-shell egg-0))
+	(is-whole-raw-egg egg-0)
+
+9 -> 17. Test learned preheat souffle operator.
+	(oven-is-heated-for-souffle oven-0)
+
+
+10 -> 19. Test learned pour-powder-ingredient-from-measuring-cup
+	(powder-ingredient-in-container bowl-0 flour-0)
+
+
+PROPOSED NEW:
+
+1. Test learned to bake souffle, cake, and move plate (all operators are correct enough).
+	(is-souffle dessert-0)
+	(not (pan-is-damaged pan-0))
+	(dessert-in-container plate-0 dessert-0)
+	(is-cake dessert-1)
+	(dessert-in-container plate-1 dessert-1)
+	(not (pan-is-damaged pan-1))
+
+2. Test learned to move baked good from container.
+    (dessert-in-container plate-0 dessert-0)
+
+3. Test learned to bake souffle (set-oven-with-souffle-bake-time-and-press-start).
+	(is-souffle dessert-0)
+
+4. Test learned to bake cakes in a kitchen with 2 ovens and 2 pans (so, this doesn't require removepanfromoven). (set-oven-with-cake-bake-time-and-press-start)
+	(is-cake dessert-0)
+
+5. Test learned fold-egg-whites-into-mixture operator.
+	(mixture-is-airy mixture-1)
+
+6. pour-mixture-only
+init-state: mixture-0 in bowl-0
+(mixture-in-container bowl-1 mixture-0)
+
+7. Test learned use-stand-mixer on cake mixture.
+	(not (mixture-is-airy mixture-0))
+	(mixture-has-raw-egg-yolk mixture-0)
+	(mixture-has-raw-egg-whites mixture-0)
+	(mixture-has-butter mixture-0)
+	(mixture-has-sugar mixture-0)
+	(mixture-has-cups-of-flour mixture-0)
+    (mixture-has-baking-powder mixture-0)
+
+8. Test learned use-stand-mixer on souffle mixture.
+	(not (mixture-is-airy mixture-0))
+	(mixture-has-raw-egg-yolk mixture-0)
+	(not (mixture-has-raw-egg-whites mixture-0))
+
+9. beat-egg-whites:
+
+    (is-whipped-egg-whites egg-3)
+
+10. separate-egg-whites:
+
+    (is-raw-egg-whites egg-3)
+    (is-raw-egg-yolk egg-0)
+    (egg-in-container bowl-0 egg-0)
+    (egg-in-container bowl-1 egg-3)
+
+11. transfer-butter-from-pan-or-bowl
+init state: butter-in-container(bowl-0 butter-0)
+
+butter-in-container(bowl-1 butter-0)
+
+12. transfer-egg-from-pan-or-bowl
+init state: egg-in-container(bowl-0 egg-0)
+
+egg-in-container(bowl-1 egg-0)
+
+13. pour-powdery-ingredient-from-container
+init state: powdery-ingredient-in-container(bowl-0 flour-0)
+powdery-ingredient-in-container(bowl-1 flour-0)
+
+
+14. remove-pan-from-oven after bakecake:
+initial state: pan is in the oven.
+(not container-in-an-oven pan-0)
+
+15. Test learned put-pan-in-oven.
+	(oven-is-full oven-0)
+	(oven-is-full oven-1)
+
+16. Test learned crack egg operator.
+	(egg-in-container pan-0 egg-0)
+	(not (is-in-shell egg-0))
+	(is-whole-raw-egg egg-0)
+
+17. Test learned preheat souffle operator.
+	(oven-is-heated-for-souffle oven-0)
+
+18. Test learned preheat cake operator.
+    (oven-is-heated-for-cake oven-0)
+
+19. Test learned pour-powder-ingredient-from-measuring-cup
+	(powder-ingredient-in-container bowl-0 flour-0)
+
+20. put-butter-in-container-from-measuring-cup
+(butter-in-container bowl-0 butter-0)

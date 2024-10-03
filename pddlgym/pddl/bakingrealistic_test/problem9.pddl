@@ -1,5 +1,5 @@
 
-(define (problem baking-realistic-test-9) (:domain bakingrealistic)
+(define (problem baking-realistic-test-4) (:domain bakingrealistic)
   (:objects
         baking-powder-0 - powder_ingredient_hypothetical
 	baking-powder-1 - powder_ingredient_hypothetical
@@ -4147,5 +4147,5 @@
 	(use-stand-mixer mixer-0 plate-1 mixture-8)
   )
   (:goal (and
-	(oven-is-heated-for-souffle oven-0)))
+	(is-whipped-egg-whites egg-3)))
 )

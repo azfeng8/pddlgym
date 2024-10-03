@@ -4147,6 +4147,5 @@
 	(use-stand-mixer mixer-0 plate-1 mixture-8)
   )
   (:goal (and
-	(is-souffle dessert-0)
-	(dessert-in-container plate-1 dessert-0)))
+	(is-souffle dessert-0)))
 )
