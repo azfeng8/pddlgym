@@ -12,6 +12,7 @@
 		(egg-is-hypothetical ?arg0 - egg_hypothetical)
 		(is-baking-powder ?arg0 - powder_ingredient_hypothetical)
 		(is-bowl ?arg0 - container)
+		(is-oven ?arg0 - oven)
 		(is-butter ?arg0 - butter_hypothetical)
 		(is-cake ?arg0 - dessert_hypothetical)
 		(is-cups-of-flour ?arg0 - powder_ingredient_hypothetical)
