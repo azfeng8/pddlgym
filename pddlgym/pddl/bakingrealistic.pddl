@@ -101,6 +101,7 @@
 			(not (mixture-has-sugar ?mixture))
 			(not (mixture-has-cups-of-flour ?mixture))
 			(not (mixture-has-baking-powder ?mixture))
+			(not (mixture-in-container ?pan ?mixture))
 			(not (dessert-is-hypothetical ?cake))
 			(is-cake ?cake)
 			(pan-is-full ?pan)
@@ -131,6 +132,7 @@
 			(not (mixture-has-sugar ?mixture))
 			(not (mixture-has-tablespoons-of-flour ?mixture))
 			(not (mixture-is-airy ?mixture))
+			(not (mixture-in-container ?pan ?mixture))
 			(not (dessert-is-hypothetical ?souffle))
 			(is-souffle ?souffle)
 			(pan-is-full ?pan)
@@ -179,7 +181,7 @@
 			(not (is-egg ?e))
 			(mixture-has-raw-egg-whites ?m)
 			(not (egg-in-container ?from ?e))
-			(egg-in-container ?to ?e))
+			)
 	)
 
 	(:action place-cake-on-plate
@@ -313,11 +315,11 @@
 			(not (is-in-shell ?x))
 			(not (is-egg ?y))
 			(egg-is-hypothetical ?y)
+			(egg-in-container ?eggyolkcontainer ?x)
 			(different ?eggwhitescontainer ?eggyolkcontainer)
 			(different ?x ?y))
 		:effect (and
 			(not (egg-is-hypothetical ?y))
-			(egg-in-container ?eggyolkcontainer ?x)
 			(not (is-whole-raw-egg ?x))
 			(is-egg ?y)
 			(is-raw-egg-yolk ?x)
