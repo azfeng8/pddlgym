@@ -44,6 +44,8 @@
 	sugar-1 - powder_ingredient_hypothetical
   )
   (:init 
+	(is-oven oven-0)
+	(is-oven oven-1)
 	(is-mixture mixture-0)
 	(mixture-has-raw-egg-yolk mixture-0)
 	(mixture-has-butter mixture-0)
@@ -51,7 +53,6 @@
 	(mixture-has-cups-of-flour mixture-0)
 	(mixture-has-baking-powder mixture-0)
 	(mixture-in-container bowl-0 mixture-0)
-
 	(beat-egg-whites mixer-0 bowl-0 egg-0)
 	(beat-egg-whites mixer-0 bowl-0 egg-1)
 	(beat-egg-whites mixer-0 bowl-0 egg-2)

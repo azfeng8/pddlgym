@@ -44,6 +44,8 @@
 	sugar-1 - powder_ingredient_hypothetical
   )
   (:init 
+	(is-oven oven-0)
+	(is-oven oven-1)
 	(egg-in-container bowl-0 egg-0)
 	(is-whole-raw-egg egg-0)
 	(beat-egg-whites mixer-0 bowl-0 egg-0)
