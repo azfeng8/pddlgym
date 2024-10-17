@@ -1,7 +1,7 @@
 
 (define (problem baking-realistic-train-4) (:domain bakingrealistic)
   (:objects
-        baking-powder-0 - powder_ingredient_hypothetical
+	baking-powder-0 - powder_ingredient_hypothetical
 	bowl-0 - container
 	bowl-1 - container
 	butter-0 - butter_hypothetical
