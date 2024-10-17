@@ -68,7 +68,7 @@
 	(beat-egg-whites mixer-0 plate-1 egg-1)
 	(beat-egg-whites mixer-0 plate-1 egg-2)
 	(beat-egg-whites mixer-0 plate-1 egg-3)
-	(butter-in-measuring-cup butter-0 measuring-cup-4)
+	(butter-in-container bowl-0 butter-0)
 	(butter-in-measuring-cup butter-1 measuring-cup-5)
 	(crack-egg-and-put-in-container egg-0 bowl-0)
 	(crack-egg-and-put-in-container egg-0 bowl-1)
@@ -1257,7 +1257,6 @@
 	(pour-powdery-ingredient-from-measuring-cup sugar-1 measuring-cup-7 pan-1)
 	(pour-powdery-ingredient-from-measuring-cup sugar-1 measuring-cup-7 plate-0)
 	(pour-powdery-ingredient-from-measuring-cup sugar-1 measuring-cup-7 plate-1)
-	(powder-ingredient-in-container bowl-0 flour-0)
 	(powder-ingredient-in-measuring-cup baking-powder-0 measuring-cup-2)
 	(powder-ingredient-in-measuring-cup baking-powder-1 measuring-cup-7)
 	(powder-ingredient-in-measuring-cup flour-0 measuring-cup-0)
@@ -1902,5 +1901,5 @@
 	(use-stand-mixer mixer-0 plate-1 mixture-8)
   )
   (:goal (and
-	(powder-ingredient-in-container bowl-1 flour-0)))
+	(butter-in-container bowl-1 butter-0)))
 )

@@ -1,5 +1,5 @@
 
-(define (problem baking-realistic-test-7) (:domain bakingrealistic)
+(define (problem baking-realistic-test-4) (:domain bakingrealistic)
   (:objects
         baking-powder-0 - powder_ingredient_hypothetical
 	baking-powder-1 - powder_ingredient_hypothetical
@@ -70,6 +70,8 @@
 	(beat-egg-whites mixer-0 plate-1 egg-3)
 	(butter-in-measuring-cup butter-0 measuring-cup-4)
 	(butter-in-measuring-cup butter-1 measuring-cup-5)
+	(container-in-an-oven pan-0)
+	(container-in-oven pan-0 oven-0)
 	(crack-egg-and-put-in-container egg-0 bowl-0)
 	(crack-egg-and-put-in-container egg-0 bowl-1)
 	(crack-egg-and-put-in-container egg-0 pan-0)
@@ -1901,7 +1903,5 @@
 	(use-stand-mixer mixer-0 plate-1 mixture-8)
   )
   (:goal (and
-	(egg-in-container pan-0 egg-0)
-	(not (is-in-shell egg-0))
-	(is-whole-raw-egg egg-0)))
+	(not (container-in-an-oven pan-0))))
 )

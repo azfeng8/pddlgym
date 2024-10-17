@@ -68,7 +68,7 @@
 	(beat-egg-whites mixer-0 plate-1 egg-1)
 	(beat-egg-whites mixer-0 plate-1 egg-2)
 	(beat-egg-whites mixer-0 plate-1 egg-3)
-	(butter-in-container bowl-0 butter-0)
+	(butter-in-measuring-cup butter-0 measuring-cup-4)
 	(butter-in-measuring-cup butter-1 measuring-cup-5)
 	(crack-egg-and-put-in-container egg-0 bowl-0)
 	(crack-egg-and-put-in-container egg-0 bowl-1)
@@ -1901,5 +1901,5 @@
 	(use-stand-mixer mixer-0 plate-1 mixture-8)
   )
   (:goal (and
-	(butter-in-container bowl-1 butter-0)))
+	(is-whipped-egg-whites egg-3)))
 )

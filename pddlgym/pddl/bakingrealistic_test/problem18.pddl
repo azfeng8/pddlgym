@@ -1,5 +1,5 @@
 
-(define (problem baking-realistic-test-9) (:domain bakingrealistic)
+(define (problem baking-realistic-test-7) (:domain bakingrealistic)
   (:objects
         baking-powder-0 - powder_ingredient_hypothetical
 	baking-powder-1 - powder_ingredient_hypothetical
@@ -1901,5 +1901,7 @@
 	(use-stand-mixer mixer-0 plate-1 mixture-8)
   )
   (:goal (and
-	(oven-is-heated-for-cake oven-0)))
+	(egg-in-container pan-0 egg-0)
+	(not (is-in-shell egg-0))
+	(is-whole-raw-egg egg-0)))
 )

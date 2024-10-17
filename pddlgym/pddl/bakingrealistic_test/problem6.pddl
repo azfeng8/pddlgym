@@ -1,5 +1,5 @@
 
-(define (problem baking-realistic-test-5) (:domain bakingrealistic)
+(define (problem baking-realistic-test-2) (:domain bakingrealistic)
   (:objects
         baking-powder-0 - powder_ingredient_hypothetical
 	baking-powder-1 - powder_ingredient_hypothetical
@@ -430,12 +430,12 @@
 	(is-bowl bowl-1)
 	(is-butter butter-0)
 	(is-butter butter-1)
+	(is-cups-of-flour flour-0)
 	(is-cups-of-flour flour-1)
 	(is-egg egg-0)
 	(is-egg egg-2)
 	(is-in-shell egg-0)
 	(is-in-shell egg-2)
-	(is-mixture mixture-0)
 	(is-oven oven-0)
 	(is-oven oven-1)
 	(is-pan pan-0)
@@ -444,13 +444,7 @@
 	(is-plate plate-1)
 	(is-sugar sugar-0)
 	(is-sugar sugar-1)
-	(is-tablespoons-of-flour flour-0)
-	(mixture-has-baking-powder mixture-0)
-	(mixture-has-butter mixture-0)
-	(mixture-has-cups-of-flour mixture-0)
-	(mixture-has-raw-egg-yolk mixture-0)
-	(mixture-has-sugar mixture-0)
-	(mixture-in-container bowl-0 mixture-0)
+	(mixture-is-hypothetical mixture-0)
 	(mixture-is-hypothetical mixture-1)
 	(mixture-is-hypothetical mixture-2)
 	(mixture-is-hypothetical mixture-3)
@@ -1907,5 +1901,5 @@
 	(use-stand-mixer mixer-0 plate-1 mixture-8)
   )
   (:goal (and
-	(mixture-in-container bowl-1 mixture-0)))
+	(is-cake dessert-0)))
 )
