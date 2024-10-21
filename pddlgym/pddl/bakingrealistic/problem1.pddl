@@ -1,10 +1,11 @@
 
 (define (problem baking-realistic-train-1) (:domain bakingrealistic)
   (:objects
-        baking-powder-0 - powder_ingredient_hypothetical
+	baking-powder-0 - powder_ingredient_hypothetical
 	bowl-0 - container
 	bowl-1 - container
 	butter-0 - butter_hypothetical
+	butter-1 - butter_hypothetical
 	dessert-0 - dessert_hypothetical
 	egg-0 - egg_hypothetical
 	egg-1 - egg_hypothetical
@@ -34,8 +35,11 @@
 	plate-0 - container
 	spatula-0 - spatula
 	sugar-0 - powder_ingredient_hypothetical
+	sugar-1 - powder_ingredient_hypothetical
   )
   (:init 
+	(is-butter butter-1)
+	(is-sugar sugar-1)
 	(is-oven oven-0)
 	(beat-egg-whites mixer-0 bowl-0 egg-0)
 	(beat-egg-whites mixer-0 bowl-0 egg-1)
