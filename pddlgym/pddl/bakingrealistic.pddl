@@ -63,7 +63,7 @@
 		(preheat-oven-with-souffle-settings ?arg0 - oven)
 		(put-butter-in-container-from-measuring-cup ?arg0 - butter_hypothetical ?arg1 - container)
 		(put-pan-in-oven ?arg0 - container ?arg1 - oven)
-		(remove-pan-from-oven ?arg0 - container)
+		(remove-pan-from-oven ?arg0 - container ?arg1 - oven)
 		(separate-raw-yolk-from-egg-whites ?arg0 - egg_hypothetical ?arg1 - egg_hypothetical ?arg2 - container ?arg3 - container)
 		(set-oven-with-cake-bake-time-and-press-start ?arg0 - oven ?arg1 - dessert_hypothetical)
 		(set-oven-with-souffle-bake-time-and-press-start ?arg0 - oven ?arg1 - dessert_hypothetical)
@@ -299,7 +299,7 @@
 
 	(:action remove-pan-from-oven
 		:parameters (?pan - container ?oven - oven)
-		:precondition (and (remove-pan-from-oven ?pan)
+		:precondition (and (remove-pan-from-oven ?pan ?oven)
 			(container-in-oven ?pan ?oven)
 			(is-pan ?pan))
 		:effect (and
