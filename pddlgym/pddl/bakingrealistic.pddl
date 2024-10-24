@@ -54,7 +54,7 @@
 		(powder-ingredient-in-measuring-cup ?arg0 - powder_ingredient_hypothetical ?arg1 - measuring_cup)
 		(beat-egg-whites ?arg0 - electric_stand_mixer ?arg1 - container ?arg2 - egg_hypothetical)
 		(crack-egg-and-put-in-container ?arg0 - egg_hypothetical ?arg1 - container)
-		(fold-stiff-egg-whites-into-mixture ?arg0 - spatula ?arg1 - container ?arg2 - container ?arg3 - egg_hypothetical)
+		(fold-stiff-egg-whites-into-mixture ?arg0 - spatula ?arg1 - container ?arg2 - container ?arg3 - egg_hypothetical ?arg4 - mixture_hypothetical)
 		(move-baked-good-in-container-to-different-container ?arg0 - container ?arg1 - container ?arg2 - dessert_hypothetical)
 		(pour-mixture-only ?arg0 - container ?arg1 - container ?arg2 - mixture_hypothetical)
 		(pour-powdery-ingredient-from-container ?arg0 - container ?arg1 - container ?arg2 - powder_ingredient_hypothetical)
@@ -89,6 +89,7 @@
 			(dessert-is-hypothetical ?cake)
 			(not (mixture-is-hypothetical ?mixture))
 			(container-in-oven ?pan ?oven)
+			(not (pan-is-full ?pan))
 			(is-pan ?pan)
 			(mixture-in-container ?pan ?mixture)
 			(mixture-has-raw-egg-whites ?mixture)
@@ -120,6 +121,7 @@
 			(dessert-is-hypothetical ?souffle)
 			(is-mixture ?mixture)
 			(is-pan ?pan)
+			(not (pan-is-full ?pan))
 			(mixture-in-container ?pan ?mixture)
 			(container-in-oven ?pan ?oven)
 			(not (mixture-is-hypothetical ?mixture))
@@ -170,7 +172,7 @@
 
 	(:action fold-egg-whites-into-mixture
 		:parameters (?e - egg_hypothetical ?m - mixture_hypothetical ?from - container ?to - container ?s - spatula)
-		:precondition (and (fold-stiff-egg-whites-into-mixture ?s ?from ?to ?e)
+		:precondition (and (fold-stiff-egg-whites-into-mixture ?s ?from ?to ?e ?m)
 			(mixture-in-container ?to ?m)
 			(egg-in-container ?from ?e)
 			(is-whipped-egg-whites ?e)
