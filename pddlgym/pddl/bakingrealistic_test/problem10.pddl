@@ -2944,5 +2944,6 @@
   (:goal (and
 	(not (mixture-is-airy mixture-0))
 	(mixture-has-raw-egg-yolk mixture-0)
-	(not (mixture-has-raw-egg-whites mixture-0))))
+  (not (mixture-has-folded-raw-egg-whites mixture-0))
+	(not (mixture-has-blended-raw-egg-whites mixture-0))))
 )

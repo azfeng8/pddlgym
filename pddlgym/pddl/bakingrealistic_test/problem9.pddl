@@ -2934,7 +2934,7 @@
   (:goal (and
 	(not (mixture-is-airy mixture-0))
 	(mixture-has-raw-egg-yolk mixture-0)
-	(mixture-has-raw-egg-whites mixture-0)
+	(mixture-has-blended-raw-egg-whites mixture-0)
 	(mixture-has-butter mixture-0)
 	(mixture-has-sugar mixture-0)
 	(mixture-has-cups-of-flour mixture-0)
