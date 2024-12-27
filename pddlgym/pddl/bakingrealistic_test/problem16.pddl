@@ -48,6 +48,7 @@
 	(butter-in-measuring-cup butter-1 measuring-cup-5)
 	(container-in-an-oven pan-0)
 	(container-in-oven pan-0 oven-0)
+  (oven-is-full oven-0)
 	(dessert-is-hypothetical dessert-0)
 	(dessert-is-hypothetical dessert-1)
 	(different baking-powder-0 baking-powder-1)

@@ -226,25 +226,11 @@
 	)
 	
 
-	(:action put-butter-in-bowl
+	(:action put-butter-in-container
 		:parameters (?x0 - measuring_cup ?x1 - butter_hypothetical ?x2 - container)
 		:precondition (and (put-butter-in-container-from-measuring-cup ?x1 ?x2)
 			(is-butter ?x1)
 			(not (butter-in-container ?x2 ?x1))
-			(not (container-in-an-oven ?x2))
-			(butter-in-measuring-cup ?x1 ?x0))
-		:effect (and
-			(butter-in-container ?x2 ?x1)
-			(not (butter-in-measuring-cup ?x1 ?x0)))
-	)
-	
-
-	(:action put-butter-in-pan
-		:parameters (?x0 - measuring_cup ?x1 - butter_hypothetical ?x2 - container)
-		:precondition (and (put-butter-in-container-from-measuring-cup ?x1 ?x2)
-			(not (butter-in-container ?x2 ?x1))
-			(is-butter ?x1)
-			(is-pan ?x2)
 			(not (container-in-an-oven ?x2))
 			(butter-in-measuring-cup ?x1 ?x0))
 		:effect (and
