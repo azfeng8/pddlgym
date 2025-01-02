@@ -38,6 +38,8 @@
 	sugar-1 - powder_ingredient_hypothetical
   )
   (:init 
+  (is-stand-mixer mixer-0)
+  (is-spatula spatula-0)
 	(butter-in-measuring-cup butter-0 measuring-cup-4)
 	(dessert-is-hypothetical dessert-0)
 	(different baking-powder-0 flour-0)

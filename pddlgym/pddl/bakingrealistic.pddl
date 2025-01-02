@@ -4,6 +4,7 @@
   (:types container butter_hypothetical measuring_cup oven dessert_hypothetical spatula egg_hypothetical powder_ingredient_hypothetical mixture_hypothetical electric_stand_mixer)
   
   (:predicates (sugar-is-consumed ?v0 - powder_ingredient_hypothetical)
+	(is-spatula ?v0 - spatula)
 	(baking-powder-is-consumed ?v0 - powder_ingredient_hypothetical)
 	(tablespoons-of-flour-is-consumed ?v0 - powder_ingredient_hypothetical)
 	(cups-of-flour-is-consumed ?v0 - powder_ingredient_hypothetical)
@@ -18,6 +19,7 @@
 	(egg-in-container ?v0 - container ?v1 - egg_hypothetical)
 	(egg-is-hypothetical ?v0 - egg_hypothetical)
 	(is-baking-powder ?v0 - powder_ingredient_hypothetical)
+	(is-stand-mixer ?v0 - electric_stand_mixer)
 	(is-bowl ?v0 - container)
 	(is-butter ?v0 - butter_hypothetical)
 	(is-cake ?v0 - dessert_hypothetical)
@@ -183,6 +185,7 @@
 			(different ?x3 ?x2))
 		:effect (and
 			(mixture-is-airy ?x1)
+			(not (is-raw-egg-whites ?x4))
 			(not (is-whipped-egg-whites ?x4))
 			(not (is-egg ?x4))
 			(mixture-has-folded-raw-egg-whites ?x1)
@@ -294,6 +297,8 @@
 	(:action separate-egg
 		:parameters (?x0 - egg_hypothetical ?x1 - container ?x2 - container ?x3 - egg_hypothetical)
 		:precondition (and (separate-raw-yolk-from-egg-whites ?x3 ?x0 ?x1 ?x2)
+			(not (container-in-an-oven ?x1))
+			(not (container-in-an-oven ?x2))
 			(is-egg ?x3)
 			(is-whole-raw-egg ?x3)
 			(not (is-in-shell ?x3))

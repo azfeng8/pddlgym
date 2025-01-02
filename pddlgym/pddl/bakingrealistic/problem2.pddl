@@ -38,6 +38,7 @@
 	sugar-1 - powder_ingredient_hypothetical
   )
   (:init 
+  (is-spatula spatula-0)
   (sugar-is-consumed sugar-1)
   (butter-is-consumed butter-1)
   (tablespoons-of-flour-is-consumed flour-1)
@@ -210,6 +211,7 @@
 	(is-oven oven-0)
 	(is-pan pan-0)
 	(is-pan pan-1)
+  (is-stand-mixer mixer-0)
 	(is-plate plate-0)
 	(is-sugar sugar-0)
 	(is-tablespoons-of-flour flour-0)

@@ -207,6 +207,8 @@
 	(is-egg egg-0)
 	(is-egg egg-1)
 	(is-in-shell egg-0)
+  (is-stand-mixer mixer-0)
+  (is-spatula spatula-0)
 	(is-in-shell egg-1)
 	(is-oven oven-0)
 	(is-pan pan-0)

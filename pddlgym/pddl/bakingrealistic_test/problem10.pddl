@@ -44,6 +44,7 @@
 	sugar-1 - powder_ingredient_hypothetical
   )
   (:init 
+  (is-spatula spatula-0)
 	(butter-in-measuring-cup butter-0 measuring-cup-4)
 	(dessert-is-hypothetical dessert-0)
 	(different baking-powder-0 baking-powder-1)

@@ -262,6 +262,7 @@
 	(is-bowl bowl-1)
 	(is-butter butter-0)
 	(butter-is-consumed butter-1)
+  (is-spatula spatula-0)
 	(is-cups-of-flour flour-1)
 	(is-egg egg-0)
 	(is-egg egg-2)

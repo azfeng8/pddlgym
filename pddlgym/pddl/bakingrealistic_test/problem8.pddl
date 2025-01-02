@@ -280,6 +280,7 @@
 	(mixture-has-baking-powder mixture-0)
 	(mixture-has-butter mixture-0)
 	(mixture-has-cups-of-flour mixture-0)
+  (is-spatula spatula-0)
 	(mixture-has-raw-egg-yolk mixture-0)
 	(mixture-has-sugar mixture-0)
 	(mixture-in-container bowl-0 mixture-0)
