@@ -150,6 +150,7 @@
 		:precondition (and (beat-egg-whites ?x0 ?x1 ?x2)
 			(egg-in-container ?x1 ?x2)
 			(is-raw-egg-whites ?x2)
+			(not (container-in-an-oven ?x1))
 			(is-egg ?x2)
 			(not (egg-is-hypothetical ?x2)))
 		:effect (and
@@ -267,17 +268,6 @@
 	)
 	
 
-	(:action put-powdery-ingredient-into-container
-		:parameters (?x0 - measuring_cup ?x1 - container ?x2 - powder_ingredient_hypothetical)
-		:precondition (and (pour-powdery-ingredient-from-measuring-cup ?x2 ?x0 ?x1)
-			(not (powder-ingredient-in-container ?x1 ?x2))
-			(not (container-in-an-oven ?x1))
-			(powder-ingredient-in-measuring-cup ?x2 ?x0))
-		:effect (and
-			(powder-ingredient-in-container ?x1 ?x2)
-			(not (powder-ingredient-in-measuring-cup ?x2 ?x0)))
-	)
-	
 
 	(:action remove-pan-from-oven
 		:parameters (?x0 - oven ?x1 - container)
