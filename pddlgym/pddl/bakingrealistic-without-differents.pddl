@@ -1,4 +1,4 @@
-(define (domain bakingrealistic)
+(define (domain bakinglarge)
     (:requirements :typing )
     (:types container measuring_cup dessert_hypothetical powder_ingredient_hypothetical butter_hypothetical mixture_hypothetical egg_hypothetical oven spatula electric_stand_mixer)
     (:predicates

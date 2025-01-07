@@ -28,7 +28,7 @@ def run_all(render=True, verbose=True):
     # demo_random("blocks_operator_actions", render=render, verbose=verbose)
     # pddlgym.register_pddl_env("bakingrealistic", True, {"operators_as_actions": False})
     # pddlgym.register_pddl_env("bakingrealistic", False, {"operators_as_actions": False})
-    demo_random("bakingrealistic", render=False)
+    demo_random("bakinglarge", render=False)
     # demo_random("quantifiedblocks", render=render, verbose=verbose)
     # demo_random("fridge", render=render, verbose=verbose)
 
