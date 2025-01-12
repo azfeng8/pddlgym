@@ -6,19 +6,21 @@ from copy import deepcopy
 from pddlgym.prolog_interface import PrologInterface
 from pddlgym.structs import Literal, LiteralConjunction, ground_literal
 from pddlgym.utils import get_object_combinations
+import numpy as np
 import functools
 
 
 def find_satisfying_assignments(kb, conds, variable_sort_fn=None, verbose=False, 
                                 max_assignment_count=2, type_to_parent_types=None,
                                 allow_redundant_variables=True, constants=None,
-                                mode="csp", init_assignments=None):
+                                mode="csp", init_assignments=None, rand_state=None):
     if mode == "csp":
         return ProofSearchTree(kb,
             allow_redundant_variables=allow_redundant_variables,
             type_to_parent_types=type_to_parent_types,
             constants=constants,
             initial_assignments=init_assignments,
+            rand_state=rand_state,
             ).prove(list(conds), 
             max_assignment_count=max_assignment_count, 
             variable_sort_fn=variable_sort_fn,
@@ -147,7 +149,12 @@ class CommitGoalError(Exception):
 class ProofSearchTree(object):
     def __init__(self, knowledge_base, allow_redundant_variables=True,
                  initial_assignments=None, allow_commit_exception=True,
-                 type_to_parent_types=None, constants=None):
+                 type_to_parent_types=None, constants=None, rand_state=None):
+
+        if rand_state is None:
+            self._rand_state = np.random.RandomState(seed=0)
+        else:
+            self._rand_state = rand_state
         self.knowledge_base = self.initialize_kb(knowledge_base)
         self.allow_redundant_variables = allow_redundant_variables
         self.goal_literals = []
@@ -250,8 +257,10 @@ class ProofSearchTree(object):
         if next_variable is None:
             return
 
-        for possible_assignment in self.get_possible_assignments(next_variable, 
-            node['variable_assignments'], goal_literals, verbose=verbose):
+        possible_assignments = sorted(self.get_possible_assignments(next_variable, 
+            node['variable_assignments'], goal_literals, verbose=verbose))
+        for i in self._rand_state.permutation(len(possible_assignments)):
+            possible_assignment = possible_assignments[i]
             yield self.create_child_node(next_variable, possible_assignment, node, goal_literals)
 
     def get_possible_assignments(self, variable, established_assignments, goal_literals, verbose=False):
